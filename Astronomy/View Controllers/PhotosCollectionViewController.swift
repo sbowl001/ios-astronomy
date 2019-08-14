@@ -62,6 +62,12 @@ class PhotosCollectionViewController: UIViewController, UICollectionViewDataSour
     
     // MARK: - Private
     
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let photoReference = self.photoReferences[indexPath.item]
+        guard let fetchOperation = self.operations[photoReference.id] else { NSLog("error cancelling photo request"); return}
+        fetchOperation.cancel()
+    }
+    
     private func loadImage(forCell cell: ImageCollectionViewCell, forItemAt indexPath: IndexPath) {
         
         //Supposed to be part 1
