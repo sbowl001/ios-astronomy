@@ -66,7 +66,8 @@ class MarsRoverClient {
     }
     
     private let baseURL = URL(string: "https://api.nasa.gov/mars-photos/api/v1")!
-    private let apiKey = "qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7"
+//    private let apiKey = "qzGsj0zsKk6CA9JZP1UjAbpQHabBfaPg2M5dGMB7"
+    private let apiKey = "f1nKJqkOLjt7rUFjVjLvmZVt9JMcGaa4SMSE941W"
 
     private func url(forInfoForRover roverName: String) -> URL {
         var url = baseURL
